@@ -1,0 +1,13 @@
+# Use an official Oracle Linux OS Linux as a parent image
+FROM oraclelinux:6.9
+FROM store/oracle/database-instantclient:12.2.0.1
+RUN yum update -y
+#Install Apache
+RUN yum -y install httpd
+#Install PHP
+RUN yum -y install php 
+#Copy files to the document root
+ADD index.html /var/www/html/
+#RUN echo "This is a test website" > /var/www/html/index.html
+CMD /usr/sbin/httpd -D FOREGROUND
+EXPOSE 80
