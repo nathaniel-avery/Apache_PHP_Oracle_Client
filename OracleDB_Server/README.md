@@ -16,5 +16,5 @@ docker logs <name>
 example:
 
 docker run -dit --name oracle-ee -p 1521:1521 -p 5500:5500 store/oracle/database-enterprise:12.2.0.1
-docker logs oracle-ee
 
+docker logs oracle-ee
